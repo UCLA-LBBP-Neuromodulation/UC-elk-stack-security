@@ -6,10 +6,16 @@ We hope our work will cause those who use it to have better, deeper, and ultimat
 
 We will continuously update this page and this GitHub repo overall with our production code and configurations to detect and alert on anomalous security events.
 
+
 ### NOTE:
-This page presents in-progress work up until 3.15.17 when some final imports are completed. We promise much more good stuff soon.
+(1) This page presents in-progress work up until 3.15.17 when some final imports are completed. We promise much more good stuff soon.
+(2) The UCLA Information Security Office played no role (technical, advisory, or other) in this project. 
 
-
+Special thanks to:
+- Andrew Leuchter, M.D. (UCLA Neuromodulation)
+- Ian Cook, M.D. (UCLA Neuromodulation)
+- Ross Bollens, Ph.D. (Retired Chief Information Security Officer, UCLA)
+- Eric Bollens (CloudCompli, Inc.)
 
 ##########################################################################################################################################################
 ### PART A: ELK STACK
