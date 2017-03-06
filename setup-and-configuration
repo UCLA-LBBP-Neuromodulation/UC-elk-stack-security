@@ -2,8 +2,7 @@ The Neuromodulation division at the UCLA Semel Institute (UCLA Health), in conju
 
 We will continuously update this page and this GitHub repo overall with our production code and configurations to detect and alert on anomalous security events.
 
-This page presents in-propgress work up until 3.15.17 when some final imports are completed. We promise much more good stuff soon.
-
+This page presents in-progress work up until 3.15.17 when some final imports are completed. We promise much more good stuff soon.
 
 
 
@@ -340,7 +339,7 @@ printf "[kibana-5.x]\nname=Elasticsearch repository for 5.x packages\nbaseurl=ht
 ########################
 
 sed -i 's/#server.port: 5601/server.port: 5601/g' /etc/kibana/kibana.yml; 
-sed -i 's/#server.host: "localhost"/server.host: "10.10.10.116"/g' /etc/kibana/kibana.yml; 
+sed -i 's/#server.host: "localhost"/server.host: "[ipv4 for your ELK host server]"/g' /etc/kibana/kibana.yml; 
 sed -i 's/localhost:9200/127.0.0.1:9200/g' /etc/kibana/kibana.yml; 
 sed -i 's/#elasticsearch.url:/elasticsearch.url:/g' /etc/kibana/kibana.yml;
 sed -i 's/#kibana.index: ".kibana"/kibana.index: ".kibana"/g' /etc/kibana/kibana.yml; 
@@ -360,7 +359,7 @@ sudo chkconfig --add kibana \
 ### Step 6.4
 ########################
 
-### Visit http://10.10.10.116:5601
+### Visit http://[ipv4 for your ELK host server]:5601
 
 Management >
 
