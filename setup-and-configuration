@@ -1,3 +1,7 @@
+The Neuromodulation division at the UCLA Semel Institute (UCLA Health), in conjunction with the UCLA Office of the President's information security division, is pleased to open-source our work on an information-security focused Elastic Stack (formerly known as the "ELK" stack) (https://www.elastic.co/).
+
+We will continuously update this page and this GitHub repo overall with our production code and configurations to detect and alert on anomalous security events.
+
 
 
 ##########################################################################################################################################################
