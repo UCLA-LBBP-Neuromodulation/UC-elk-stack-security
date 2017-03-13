@@ -1,11 +1,7 @@
 # UC-elk-stack-security
 The Neuromodulation division at the UCLA Semel Institute (UCLA Health), in conjunction with the UCLA Office of the President's information security division, is pleased to open-source our work on an information-security focused Elastic Stack (formerly known as the "ELK" stack) (https://www.elastic.co/).
 
-
-
-# Logstash Features
-
-Our customized Elastic (ELK) stack inregration is heavily security focused and includes: 
+Our customized Elastic (ELK) stack inregration is heavily security focused and includes the following. We have included our production Filebeat (sending log files), Packetbeat (sending packets and netflow), and Metricbeat (sending server metrics, such as storage and mysqld processes). 
 
 ### Two-factor Auth Checks  
 (1) Checking if two-factor authentication is enabled (outputs to log, which is collected by Filebeat) on servers
