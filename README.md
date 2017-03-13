@@ -3,34 +3,37 @@ The Neuromodulation division at the UCLA Semel Institute (UCLA Health), in conju
 
 
 
-### Logstash Features
+# Logstash Features
 
 Our customized Elastic (ELK) stack inregration is heavily security focused and includes: 
 
-# Two-factor Auth Checks  
+### Two-factor Auth Checks  
 (1) Checking if two-factor authentication is enabled (outputs to log, which is collected by Filebeat) on servers
 
-# SSH:
+### SSH:
 (1) Logging all successful and failured multi-factor authentication (e.g., Google Authenticator) SSH events;
 (2) Logging all successful and failured non-MFA SSH attempts;
 
-# Users and Groups
+### Users and Groups
 (1) Creation and deletion of users
 (2) Creation and deletion of groups
 (3) Changing of passwords
 (4) Successful and failed sudo attempts
 
-# File Integrity
+### File Integrity
 (1) Tracking file content change events, including before and after hashes
 (2) Tracking the deletion of files 
 
-# Netflow
+### Netflow
 (1) Integration with Elastic stack's Packetbeat with our own customizations to track netflow, including which IP addresses are experiencing anomalous spikes in traffic and hourly netflow
 (2) Tracking data exfiltration events at certain MB thresholds
 (3) Tracking which ports are used, including anomalous port events
 
-# Firewalls and Ports
+### Firewalls and Ports
 (1) Tracking the history of port openings and closures
 
-# Heartbeat
+### Heartbeat
 (1) Integration of Elastic stack's new Beat ("Heartbeat") to conduct ICMP and HTTP "pings" to check for service and server uptime and response time
+
+### Mail Events
+(1) Tracking successful and failed Dovecot and Postfix mail events and error messages
