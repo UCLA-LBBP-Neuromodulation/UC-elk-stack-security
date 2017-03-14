@@ -436,14 +436,14 @@ packetbeat.protocols.nfs:
 packetbeat.procs:
   enabled: true
   monitored:
-#    - process: mysqld
-      cmdline_grep: mysqld
+     - process: mysqld
+       cmdline_grep: mysqld
 #
 #    - process: pgsql
 #      cmdline_grep: postgres
 #
-    - process: nginx
-      cmdline_grep: nginx
+     - process: nginx
+       cmdline_grep: nginx
 #
 #    - process: app
 #      cmdline_grep: gunicorn
