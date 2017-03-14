@@ -387,7 +387,7 @@ Management >
 ### Step 7: Set up Beats Repo (5.x)
 ##########################################################
 sudo rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch \
-&& printf "[elastic-5.x]\nname=Elastic repository for 5.x packages\nbaseurl=https://artifacts.elastic.co/packages/5.x/yum\ngpgcheck=1\ngpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch\nenabled=1\nautorefresh=1\ntype=rpm-md" >> /etc/yum.repos.d/elastic.repo \
+&& printf "[elastic-5.x]\nname=Elastic repository for 5.x packages\nbaseurl=https://artifacts.elastic.co/packages/5.x/yum\ngpgcheck=1\ngpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch\nenabled=1\nautorefresh=1\ntype=rpm-md" >> /etc/yum.repos.d/elastic.repo
 
 
 
