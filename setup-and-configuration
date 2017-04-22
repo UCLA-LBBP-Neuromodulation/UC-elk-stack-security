@@ -87,7 +87,7 @@ yum install gcc-c++ patch readline readline-devel zlib zlib-devel -y \
 && yum install bzip2 autoconf automake libtool bison iconv-devel -y \
 && curl -sSL https://get.rvm.io | bash -s stable --ruby=jruby --gems=rails \
 && rvm install ruby-2.3.3 \
-&& rvm docs generate-ri
+&& rvm docs generate-ri;
 
 ###################
 ### Warning #1: 
@@ -204,7 +204,9 @@ server {
 		  [ipv4 for Beats client]
 		  [ipv4 for your OSSEC HIDS Server . . . ]
 		  
-### Put the contents between "START" and "END" comment blocks below into /home/firewall.sh:
+### Firewall
+### For CentOS 6: Put the contents between "START" and "END" comment blocks below into /home/firewall.sh:
+### ForCentOS 7: Use firewalld to enable the ports in the permanent public zone bleow)
 
 ###### Start ###### 
 #!/bin/bash
@@ -256,7 +258,7 @@ iptables -F \
 ### Step 3.9:
 ########################
 
-service nginx restart
+service nginx restart;
 
 
 
@@ -300,7 +302,7 @@ yum install logstash -y;
 sudo /usr/share/logstash/bin/system-install;
 
 ### Step 5.1.2: Start Logstash
-sudo initctl start logstash
+sudo initctl start logstash;
 
 
 ####################################
@@ -387,7 +389,7 @@ Management >
 ### Step 7: Set up Beats Repo (5.x)
 ##########################################################
 sudo rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch \
-&& printf "[elastic-5.x]\nname=Elastic repository for 5.x packages\nbaseurl=https://artifacts.elastic.co/packages/5.x/yum\ngpgcheck=1\ngpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch\nenabled=1\nautorefresh=1\ntype=rpm-md" >> /etc/yum.repos.d/elastic.repo
+&& printf "[elastic-5.x]\nname=Elastic repository for 5.x packages\nbaseurl=https://artifacts.elastic.co/packages/5.x/yum\ngpgcheck=1\ngpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch\nenabled=1\nautorefresh=1\ntype=rpm-md" >> /etc/yum.repos.d/elastic.repo;
 
 
 
@@ -449,7 +451,7 @@ service metricbeat start;
 ########################
 ### ON ELK HOST and AGENTS:
 
-&& sudo yum install filebeat -y;
+sudo yum install filebeat -y;
 
 
 ########################
@@ -492,7 +494,7 @@ service filebeat start;
 ########################
 ### ON ELK HOST and AGENTS:
 
-&& sudo yum install packetbeat -y;
+sudo yum install packetbeat -y;
 
 
 ########################
@@ -533,7 +535,7 @@ service packetbeat start;
 ########################
 ### ON ELK HOST and AGENTS:
 
-&& sudo yum install heartbeat -y;
+sudo yum install heartbeat -y;
 
 
 ########################
@@ -560,13 +562,14 @@ service heartbeat start;
 
 
 ##########################################################
-### Step 12: Import Dashboards
+### Step 12: Import Dashboards 
+### (Filebeat, Packetbeat, Metricbeat, Heartbeat)
 ##########################################################
 		
 cd /usr/share/filebeat && ./scripts/import_dashboards -es http://127.0.0.1:9200;
 cd /usr/share/packetbeat && ./scripts/import_dashboards -es http://127.0.0.1:9200;
 cd /usr/share/metricbeat && ./scripts/import_dashboards -es http://127.0.0.1:9200;
-
+cd /usr/share/heartbeat && ./scripts/import_dashboards -es http://127.0.0.1:9200;
 		
 		
 		
