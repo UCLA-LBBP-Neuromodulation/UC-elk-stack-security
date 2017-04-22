@@ -165,9 +165,12 @@ Change the following in /etc/nginx/nginx.conf:
 ########################
 ### Step 3.6:
 ########################
-### "Generate Keys from elkbeats.cfr" (note: you will have to fill in informationa about your server)
 
+### Generate Keys from elkbeats.cfr (note: you will have to fill in information about your server)
 openssl req -x509 -batch -nodes -newkey rsa:2048 -keyout /etc/pki/tls/private/logstash-beats.key -out /etc/pki/tls/certs/logstash-beats.crt -config /etc/pki/tls/elkbeats.cfr -days 1825;
+
+### Generate your kibana password (after you type in your username (represented herein as "ampodobas"), but you can use whatever username you want). Your password will be entered upon the "Password:" prompt coming up:
+htpasswd -c /etc/nginx/htpasswd.users ampodobas
 
 ########################
 ### Step 3.7:
@@ -799,9 +802,6 @@ Then enter "(I)" for "(I)mport key from the server (I)."
 
 ### Step 3.7:
 Enter the key you copied in Step 3.4 on each agent at the prompt that reads "Paste it here (or '\q' to quit):". Then, if the resulting values are correct, enter "y" at the prompt that reads "Confirm adding it?(y/n):"
-
-
-
 
  - System is Redhat Linux.
  - Init script modified to start OSSEC HIDS during boot.
