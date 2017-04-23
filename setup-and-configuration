@@ -184,7 +184,7 @@ server {
 	ssl on;
 	ssl_certificate 	/etc/pki/tls/certs/beats-logstash.crt; 
 	ssl_certificate_key /etc/pki/tls/private/beats-logstash.key;
-	server_name           [you Fully-Qualified Domain Name];
+	server_name           [your Fully-Qualified Domain Name];
 	access_log            /var/log/nginx/kibana.access.log;
 	error_log /var/log/nginx/kibana.error.log;
 	
@@ -287,6 +287,7 @@ rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch \
 ####################################
 ### Step 4.2: Elasticsearch Plugins
 ####################################
+sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install ingest-user-agent;
 sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install ingest-geoip;
 
 
