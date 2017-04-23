@@ -167,7 +167,7 @@ Change the following in /etc/nginx/nginx.conf:
 ########################
 
 ### Generate Keys from elkbeats.cfr (note: you will have to fill in information about your server)
-openssl req -x509 -batch -nodes -newkey rsa:2048 -keyout /etc/pki/tls/private/logstash-beats.key -out /etc/pki/tls/certs/logstash-beats.crt -config /etc/pki/tls/elkbeats.cfr -days 1825;
+openssl req -x509 -batch -nodes -newkey rsa:2048 -keyout /etc/pki/tls/private/beats-logstash.key -out /etc/pki/tls/certs/beats-logstash.crt -config /etc/pki/tls/elkbeats.cfr -days 1825;
 
 ### Generate your kibana password (after you type in your username (represented herein as "ampodobas"), but you can use whatever username you want). Your password will be entered upon the "Password:" prompt coming up:
 htpasswd -c /etc/nginx/htpasswd.users ampodobas
