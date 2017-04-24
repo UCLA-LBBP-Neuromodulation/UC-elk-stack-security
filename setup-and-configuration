@@ -400,7 +400,7 @@ sudo rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch \
 
 
 ##########################################################
-### Step 8: Filebeat
+### Step 8: Metricbeat
 ##########################################################
 
 #### Note: Steps 8.1 and 8.2 should be run on the ELK
